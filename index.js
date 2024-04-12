@@ -1,21 +1,19 @@
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 const express = require('express')
 
 app = express()
 
-mongoose.connect('mongodb://localhost:27017/newdb').then(()=>{
-    console.log("Db is Connected")
-})
-console.log("Hello")
+// mongoose.connect('mongodb://localhost:27017/newdb').then(()=>{
+//     console.log("Db is Connected")
+// })
+// console.log("Hello")
 
-const UserSchema = new mongoose.Schema({
-    name:String
-})
-const UserModel = mongoose.model("newcol",UserSchema)
+// const UserSchema = new mongoose.Schema({
+//     name:String
+// })
+// const UserModel = mongoose.model("newcol",UserSchema)
 
 app.get("/",(req,res)=>{
-    UserModel.find({}).then(function(newcol){
-        res.json(newcol)
-    })
+    res.write("HELLO")
 })
 app.listen(5000) 
